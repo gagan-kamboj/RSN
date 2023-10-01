@@ -1,0 +1,122 @@
+<?php
+$page = 'Services';
+include('inc/header.php');  
+?>
+<!-- Banner start -->
+ <div class="bannerbtnsoft"> <button class="buttondarkpink">Software Developement</button> </div>
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1><?=$banner['Heading'];?></h1>
+                <h4 class="wehelp"><?=$banner['Sub_heading'];?></h4>
+                <p><?=$banner['Content'];?> </p>
+                <button class="btn btn-info">Lets Connect</button>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-fluid" src="admin/dashboard/assets/images/banner/<?=$banner['Image'];?>" alt=""/>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+ <!-- Banner end -->
+ 
+   <!-- Slider start 
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+ 
+  
+   <div class="row">
+  <div class="col-md-6">
+        <h4></h4>
+          <img class="img-fluid" src="admin/dashboard/assets/images/slider/" style="height:40px; width=40px;" alt=""/>
+          <p></p>
+      </div>
+       <div class="col-md-6">
+     <img class="img-fluid" src="admin/dashboard/assets/images/slider/" style="height:200px; width=900px;" alt=""/>
+      </div>
+       </div>
+   
+</div>
+ 
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+ 
+</div><br><br>
+
+
+  <!-- Slider end -->
+  
+   <!--BANNER TEAM START-->
+  
+<div class="banner">
+    <div class="container">
+        <div class="row">
+             <div class="col-sm-6">
+                <img class="img-fluid" src="admin/dashboard/assets/images/experiencedbanner/<?=$bannerteam['Images'];?>" alt=""/>
+            </div>
+            
+            <div class="col-sm-6">
+			<div class="bannerbtnsoft3"> <button class="buttondarkpink">Experienced Team</button> </div>
+                <h1 class="special"><?=$bannerteam['Heading'];?></h1>
+                <p><?=$bannerteam['Content'];?> </p>
+                <button class="btn btn-info">More about us	&#8594</button>
+            </div>
+           
+        </div>
+    </div>
+</div><br><br>
+  
+   <!--BANNER TEAM END-->
+   
+<!-- Services start -->
+     <div class="container service-section">
+       
+        <div class="row">
+              <?php 
+			  $a = 0;
+			  while($row = mysqli_fetch_array($Service)){ ?>
+            <div class="col-md-4">
+                <div class="service-tabs">
+                    <a href="single-service.php?services=<?=$row['Title'];?>" class="zoom d-block">
+                 <img class="img-fluid imgbox<?=$a;?>" src="admin/dashboard/assets/images/services/<?=$row['Icon'];?>" alt=""/>
+                <h4 class="service-title<?=$a;?>"><?=$row['Title'];?></h4>
+                <p><?=$row['Content'];?></p></a>
+                </div>
+            </div>
+              
+              <?php $a++;} ?>
+        </div>
+ 
+          
+       
+    </div>
+     <!-- Services end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php include('inc/footer.php'); ?>

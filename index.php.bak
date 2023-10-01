@@ -1,0 +1,155 @@
+<?php
+$page = 'Home';
+include('inc/header.php');  
+?>
+ 
+ <!-- Banner start -->
+ <div class="bannerbtnsoft"> <button class="buttondarkpink">Software Developement</button> </div>
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1 class="exper"><?=$banner['Heading'];?></h1>
+                <h4 class="wehelp"><?=$banner['Sub_heading'];?></h4>
+                <p><?=$banner['Content'];?> </p>
+                <button class="btn btn-info">Let's Connect</button>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-fluid" src="admin/dashboard/assets/images/banner/<?=$banner['Image'];?>" alt="<?=$banner['Image'];?>"/>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+ <!-- Banner end -->
+ 
+  <!-- Slider start 
+
+<div class="slideshow-container">
+ 
+<div class="mySlides fade">
+ 
+  
+   <div class="row">
+  <div class="col-md-6">
+        <h4></h4>
+          <img class="img-fluid" src="admin/dashboard/assets/images/slider/" style="height:40px; width=40px;" alt=""/>
+          <p></p>
+      </div>
+       <div class="col-md-6">
+     <img class="img-fluid" src="admin/dashboard/assets/images/slider/" style="height:200px; width=900px;" alt=""/>
+      </div>
+       </div>
+   
+</div>
+  
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+ 
+</div><br><br>
+
+
+  <!-- Slider end -->
+  <!--BANNER TEAM START-->
+ 
+<div class="bannerbnr-2">
+    <div class="container">
+        <div class="row">
+             <div class="col-sm-6">
+                <img class="img-fluid" src="admin/dashboard/assets/images/experiencedbanner/<?=$bannerteam['Images'];?>" alt="<?=$bannerteam['Images'];?>"/>
+            </div>
+            
+            <div class="col-sm-6">
+                <button class="buttondarkpink2">Experienced Team</button>  
+                <h1 style="margin-top:10px;"><?=$bannerteam['Heading'];?></h1>
+                <p><?=$bannerteam['Content'];?> </p>
+                <a href>More about us	&#8594</button>
+            </div>
+           
+        </div>
+    </div>
+</div> 
+
+<hr class="banner2bottom">
+  
+   <!--BANNER TEAM END-->
+  
+  <h4 class="we-help">We help with </h4><br>
+  <div class="button-link">
+   <button type="button" class="btn btn-primary" id="service">Services</button>
+    <button type="button" class="btn btn-primary" id="industry">Industries</button><br><br>
+  </div>
+  
+    <!-- Services start -->
+     <div class="container service-section">
+        
+        <div class="row">
+             <?php 
+			 $a = 0;
+			 while($row = mysqli_fetch_array($Services)){ ?>
+            <div class="col-md-4">
+                <div class="service-tabs">
+                     <a href="single-service.php?services=<?=$row['Title'];?>" class="zoom d-block">
+                 <img class="img-fluid imgbox<?=$a;?>" src="admin/dashboard/assets/images/services/<?=$row['Icon'];?>" alt=""/>
+                <h4 class="service-title<?=$a;?>"><?=$row['Title'];?></h4>
+                <p><?=$row['Content'];?></p></a>
+                </div>
+            </div>
+              <?php $a++;} ?>
+        </div><br>
+  
+         <a class="btn btn-secondary" style="float:right;" href="service.php" role="button">See All</a>
+    </div>
+     <!-- Services end -->
+  
+  
+    <!-- Industry start -->
+     <div class="container industry-section" style="display:none;">
+        <div class="row">
+             <?php while($row = mysqli_fetch_array($Industries)){ ?>
+            <div class="col-md-4">
+                <div class="service-tabs">
+                     <a href="single-industry.php?industry=<?=$row['Title'];?>" class="zoom d-block">
+                 <img class="img-fluid" src="admin/dashboard/assets/images/industry/<?=$row['Icon'];?>" style="height:40px; width=40px;" alt=""/>
+                <h4><?=$row['Title'];?></h4>
+                <p><?=$row['Content'];?></p></a>
+                </div>
+            </div>
+               <?php } ?>
+        </div><br>
+          <a class="btn btn-secondary" style="float:right;" href="industry.php" role="button">See All</a>
+         </div>
+     
+     <!-- industry end -->
+  
+  
+  
+
+  
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#industry').click(function(){
+        $('.industry-section').css('display','block');
+        $('.service-section').css('display','none');
+        });
+    });
+    
+</script> 
+<script>
+    $(document).ready(function() {
+        $('#service').click(function(){
+        $('.service-section').css('display','block');
+        $('.industry-section').css('display','none');
+        });
+    });
+    
+</script> 
+  
+  
+  
+<?php include('inc/footer.php'); ?>

@@ -1,0 +1,169 @@
+<?php 
+$page = 'About Us';
+include('inc/header.php'); 
+
+?>
+<style>
+.careercolabout {
+   box-shadow: 0px 2px 4px 0px;
+    padding: 51px;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-left: 155px;
+}
+h3.careerrsnabout {
+   text-align:center;
+}
+p.carercontent {
+   text-align:center;
+}
+.btnabout {
+  padding-left: 398px;
+}
+</style>
+ <!-- AboutUs start -->
+<div class="aboutus">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1><?=$aboutus['Title'];?></h1>
+              
+                <p><?=$aboutus['Content'];?> </p>
+               
+                <a class="btn btn-info" href="contactus.php" role="button">Lets work gether</a>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-fluid" src="admin/dashboard/assets/images/aboutus/<?=$aboutus['Image'];?>" style="height:200px; width=200px;" alt=""/>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+ <!-- AboutUs end -->
+
+<!-- stats -->
+<div class="row stat">
+            <div class="col-sm-3">
+                <div class="service-tabs">
+                <h4><?=$achievements['Talented_people'];?>+</h4>
+                <p>Talented people </p>
+            </div>
+            
+             </div>
+            <div class="col-sm-3">
+                <div class="service-tabs">
+              
+                <h4><?=$achievements['Year_market'];?>+</h4>
+                <p>Year market </p>
+            </div>
+             </div>
+             <div class="col-sm-3">
+                 <div class="service-tabs">
+               
+                <h4><?=$achievements['Technogies_used'];?>+</h4>
+                <p>Technogies used</p>
+            </div>
+             </div>
+              <div class="col-sm-3">
+                 <div class="service-tabs">
+               
+              <h4><?=$achievements['Offices'];?>+</h4>
+                <p>Offices</p>
+            </div>
+             </div>
+        </div><br><br>
+<!-- //stats -->
+ <!-- Slider start -->
+
+<div class="slideshow-container">
+ <?php while($row = mysqli_fetch_array($Slider)){ ?>
+<div class="mySlides fade">
+ 
+  
+   <div class="row">
+  <div class="col-md-6">
+        <h4><?=$row['Title'];?></h4>
+          <img class="img-fluid" src="admin/dashboard/assets/images/slider/<?=$row['Icon'];?>" style="height:40px; width=40px;" alt=""/>
+          <p><?=$row['Content'];?></p>
+      </div>
+       <div class="col-md-6">
+     <img class="img-fluid" src="admin/dashboard/assets/images/slider/<?=$row['Image'];?>" style="height:200px; width=900px;" alt=""/>
+      </div>
+       </div>
+   
+</div>
+  <?php } ?>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+ 
+</div><br><br>
+
+
+  <!-- Slider end -->
+ <!-- AboutUs start -->
+<div class="aboutus">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1><?=$aboutus['Title1'];?></h1>
+              
+                <p><?=$aboutus['Content1'];?> </p>
+             
+            </div>
+            <div class="col-sm-6">
+                <img class="img-fluid" src="admin/dashboard/assets/images/aboutus/<?=$aboutus['Image'];?>" style="height:200px; width=200px;" alt=""/>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+ <!-- AboutUs end -->
+<!-- AboutUs start -->
+<div class="aboutus">
+    <div class="container">
+        <div class="row">
+             <div class="col-sm-6">
+                <img class="img-fluid" src="admin/dashboard/assets/images/aboutus/<?=$aboutus['Image'];?>" style="height:200px; width=200px;" alt=""/>
+            </div>
+            <div class="col-sm-6">
+                <h1><?=$aboutus['Title2'];?></h1>
+              
+                <p><?=$aboutus['Content2'];?> </p>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+ <!-- AboutUs end -->
+ 
+ <h1 class="our">Our Values</h1>
+ 
+ 
+ <!-- Our values start -->
+<div class="row">
+     <?php while($row = mysqli_fetch_array($ourvalues)){ ?>
+            <div class="col-sm-4">
+                <div class="value">
+      <h5><?=$row['Icon'];?></h5>
+                <h4><?=$row['Sub_heading'];?></h4>
+                <p><?=$row['Content'];?></p>
+            </div>
+            
+             </div>
+            <?php } ?>
+         </div><br>
+            
+<!-- Our values end -->
+
+<div class="col-md-9 careercolabout ">
+<h3 class="careerrsnabout">Have a bussiness problem to solve?</h3>
+
+<p class="carercontent">Let’s craft brilliance together!</p>
+
+<div class="btnabout">
+ <a class="btn btn-secondary careerabout" style="float:left;" href="contactus.php" role="button">Contact Us</a>
+ </div>
+</div>
+ 
+<?php include('inc/footer.php'); ?>
